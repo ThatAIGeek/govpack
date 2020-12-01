@@ -2,6 +2,10 @@
 ## Ukrainian open data pack
 
 ### Alpha release action plan:
+- [ ]  possible package use cases:
+  - usecase 1 
+  - usecase 2
+  - usecase 3
 - [ ]  get list of datasets to focus on at first stage
   - dataset1 link
   - dataset2 link
