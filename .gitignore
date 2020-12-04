@@ -1,0 +1,6 @@
+govpack_yarusx.egg-info/
+.DS_Store
+script.py
+build/
+dist/
+med_pkg/__pycache__/

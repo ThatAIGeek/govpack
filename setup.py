@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="govpack-yarusx", # Replace with your own username
-    version="0.0.1",
+    version="0.0.7",
     author="Yaroslav Khoruzhenko",
     author_email="yarusx@gmail.com",
-    description="A package with a useful data from https://data.gov.ua/",
+    description="A package that helps to get a useful data from https://data.gov.ua/",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ThatAIGeek/govpack",

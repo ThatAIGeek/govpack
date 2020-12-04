@@ -1,7 +1,0 @@
-README.md
-setup.py
-govpack_yarusx.egg-info/PKG-INFO
-govpack_yarusx.egg-info/SOURCES.txt
-govpack_yarusx.egg-info/dependency_links.txt
-govpack_yarusx.egg-info/top_level.txt
-med_pkg/__init__.py
