@@ -17,6 +17,10 @@ pip install -i https://test.pypi.org/simple/ govpack-yarusx
 Usage:
 After installing govpack-yarusx (test version) please use (both from command line or in your python file): <b>"from med_pkg import get_data"</b>. This will cause the downloading of 3 datasets and 1 data description files from https://data.gov.ua/dataset/959dca0a-9b74-41ff-a7c8-f8de6398a219.
 
+Installation and usage example:
+
+![alt text](https://github.com/ThatAIGeek/govpack/blob/develop/govpack_usecase.png?raw=true)
+
 ##### Alpha release action plan:
 - [ ]  possible package use cases:
   - usecase 1
