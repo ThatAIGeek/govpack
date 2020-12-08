@@ -13,23 +13,38 @@ Installation:
 pip install -i https://test.pypi.org/simple/ govpack-yarusx
 
 #####
-Usage:
-After installing govpack-yarusx (test version) please use (both from command line or in your python file): <b>"from med_pkg import get_data"</b>. This will cause the downloading of 3 datasets and 1 data description files from https://data.gov.ua/dataset/959dca0a-9b74-41ff-a7c8-f8de6398a219.
+Usage example:
+After installing govpack-yarusx (test version) and opening python in your terminal:
 
-Installation and usage example:
+# Importing govpack.
+import govpack
+
+# Importing med_apis - dictionary that contains dataset name and API link (from data.gov.ua) key-value pairs.
+from govpack.get_apis import med_apis
+
+# Looking through the dictionary with APIs for different dataset collections.
+med_apis
+
+# Creating a string with a link to the first (as example) dataset collection.
+api = list(med_apis.values())[0]
+
+# Checking what we’ve got
+api
+
+# Importing get_urls and create_datasets functions.
+from govpack.get_data import get_urls, create_datasets
+
+# Creating a dictionary that contains link to dataset file and its extension as a key-value pairs.
+urls = get_urls(api)
+
+# Creating a dictionary that contains variable name (dataset_ + its No. according to urls dict) and pandas data frame as a key-value pairs. I.e.  dataset_0 will relate to 'https://data.gov.ua/dataset/193cb9ba-e12e-4987-a9a9-d464e834593e/resource/9fceb2ba-6fd3-42f8-8ffd-dd7d7c2ba821/download/opis-atributiv-naboru-danikh.xlsx‘. 'download = True‘ will cause downloading of the dataset files. Useful option while having troubles with creating datasets for some files with 'create_datasets’.
+datasets = create_datasets(urls, download = False)
+
+# Checking heads and the first five rows in the dataset_0
+datasets['dataset_0'].head()
+
+You could also follow the usecase described above from this picture:
 
 ![alt text](https://github.com/ThatAIGeek/govpack/blob/develop/govpack_usecase.png?raw=true)
 
-###### Alpha release action plan:
-- [ ]  possible package use cases:
-  - usecase 1
-  - usecase 2
-  - usecase 3
-- [ ]  get list of datasets to focus on at first stage
-  - dataset1 link
-  - dataset2 link
-  - dataset3 link
-- [ ]  write a simple package to setup and push into pypi
-- [ ]  decide on the best format for datasets(scipy?)
-- [ ]  add first dataset for the package
-- [ ]  create usage examples
+<img alt="https://github.com/ThatAIGeek/govpack/blob/develop/govpack_usecase.png">
