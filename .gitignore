@@ -3,4 +3,4 @@ govpack_yarusx.egg-info/
 script.py
 build/
 dist/
-med_pkg/__pycache__/
+govpack/__pycache__/
