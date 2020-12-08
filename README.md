@@ -45,6 +45,4 @@ datasets['dataset_0'].head()
 
 You could also follow the usecase described above from this picture:
 
-![alt text](https://github.com/ThatAIGeek/govpack/blob/develop/govpack_usecase.png?raw=true)
-
-<img alt="https://github.com/ThatAIGeek/govpack/blob/develop/govpack_usecase.png">
+![](https://github.com/ThatAIGeek/govpack/blob/develop/govpack_usecase.png)
