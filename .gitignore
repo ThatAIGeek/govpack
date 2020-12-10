@@ -3,4 +3,5 @@ govpack_yarusx.egg-info/
 script.py
 build/
 dist/
-govpack/__pycache__/
+get_data_copy.py
+get_apis_copy.py

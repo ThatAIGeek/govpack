@@ -6,7 +6,7 @@ import time
 import pandas as pd
 
 #Getting links from API
-def get_urls(api_link):
+def create_pandas(api_link, force_download = False):
     try:
         with urlopen(api_link) as response:
             source = response.read()
@@ -15,7 +15,7 @@ def get_urls(api_link):
         return
     #Loading data from the API link as an python object with JSON
     data = json.loads(source)
-    #Making a dict with key - dataset file url-link, and value - file extension (xls/xlsx or csv)
+    #Creating a list of dataset files links
     urls = dict()
     for item in data['result']['resources']:
         url = item['url']
@@ -26,30 +26,43 @@ def get_urls(api_link):
         elif ext == 'xlsx' or ext == 'xls':
             extension = 'excel'
         else:
-            extension = None
+            extension = 'not_supported'
         urls.update({url : extension})
 
-    return urls
+    def err(e):
+        return ("Can't create pd dataset for: \"" + f_name + "\", because of the Error: \n\"" + str(e).rstrip() + "\"\nThe file has been downloaded for a manual parsing.")
 
-def create_datasets(urls, download = False):
     datasets_list = list()
     datasets = dict()
 
     for iteration, (url, extension) in enumerate(urls.items()):
-        datasets_list.append("dataset_" + str(iteration))
+        output_name = "dataset_" + str(iteration)
+        datasets_list.append(output_name)
         f_name = re.findall('download/([\w\-\.]+)', url)[0]
+        output_name_e = "Got an Error while creating pd dataset for " + str(f_name) + ". The file has been downloaded for a manual parsing."
         #Creating pandas datasets
-        try:
-            if extension == 'csv':
-                globals()["dataset_" + str(iteration)] = pd.read_csv(url)
-            elif extension == 'excel':
-                globals()["dataset_" + str(iteration)] = pd.read_excel(url)
-        except ValueError as e:
-                globals()["dataset_" + str(iteration)] = "Got an Error while creating pd dataset for " + str(f_name) + ". Please download and parse this file manually."
-                print("Can not create pd dataset for: \"" + f_name + "\", because of the Error: \n\"" + str(e).rstrip() + "\"\nPlease download to download and parse this file manually.")
-        datasets.update({datasets_list[iteration] : globals()["dataset_" + str(iteration)]})
+        if extension == 'csv':
+            try:
+                globals()[output_name] = pd.read_csv(url, sep=',')
+            except:
+                try:
+                    globals()[output_name] = pd.read_csv(url, sep=';')
+                except ValueError as e:
+                    urlretrieve(url, f_name)
+                    print(err(e))
+                    globals()[output_name] = output_name_e
 
-        if download == True:
+        elif extension == 'excel':
+            try:
+                globals()[output_name] = pd.read_excel(url)
+            except:
+                urlretrieve(url, f_name)
+                print(err(e))
+                globals()[output_name] = output_name_e
+
+        datasets.update({datasets_list[iteration] : globals()[output_name]})
+
+        if force_download == True:
             urlretrieve(url, f_name)
 
     return datasets
