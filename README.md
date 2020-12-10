@@ -16,7 +16,7 @@ pip install -i https://test.pypi.org/simple/ govpack-yarusx
 Usage example:
 After installing govpack-yarusx (test version) and opening python in your terminal:
 
-'''python
+```python
 from govpack import *
 modules = dir()
 print(modules)
@@ -26,7 +26,7 @@ names = get_apis.apis(med_apis.names)
 names
 pandas_var_list = get_data.create_pandas(apis[0]) # that will take some time
 pandas_var_list
-'''
+```
 
 You could also follow described above usecase from this picture:
 
