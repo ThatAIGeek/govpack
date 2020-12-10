@@ -28,6 +28,6 @@ pandas_var_list = get_data.create_pandas(apis[0]) # that will take some time
 pandas_var_list
 ```
 
-You could also follow described above usecase from this picture:
+You could also follow described above use case from this picture:
 
-[![alt text][https://github.com/ThatAIGeek/govpack/blob/develop/use_case.png]]
+![Use case](https://github.com/ThatAIGeek/govpack/blob/develop/use_case.png)
