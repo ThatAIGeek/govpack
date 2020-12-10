@@ -30,4 +30,4 @@ pandas_var_list
 
 You could also follow a use case described above from this picture:
 
-![Use case](https://drive.google.com/file/d/1P-Hc_MRyjiPjfLI2rJZoD3sn6TU5mysm/view?usp=sharing)
+![Use case](https://drive.google.com/uc?export=view&id=1P-Hc_MRyjiPjfLI2rJZoD3sn6TU5mysm)
