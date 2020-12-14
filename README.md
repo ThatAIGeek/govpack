@@ -22,7 +22,7 @@ modules = dir()
 print(modules)
 apis = get_apis.apis(med_apis.list)
 apis
-names = get_apis.apis(med_apis.names)
+names = med_apis.names
 names
 pandas_var_list = get_data.create_pandas(apis[0]) # that will take some time
 pandas_var_list
