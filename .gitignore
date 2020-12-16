@@ -4,4 +4,5 @@ script.py
 build/
 dist/
 get_data_copy.py
+get_data.py
 get_apis_copy.py

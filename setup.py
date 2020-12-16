@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="govpack-yarusx", # Replace with your own username
-    version="0.1.2",
+    version="0.1.3",
     author="Yaroslav Khoruzhenko",
     author_email="yarusx@gmail.com",
     description="A package that helps to create pandas variables from a public datasets: https://data.gov.ua/ ",
