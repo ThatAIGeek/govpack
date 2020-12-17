@@ -1,19 +1,30 @@
 # govpack
+
 ## Ukrainian open data pack
+
 This package was created to ease and speed up access to the public data published by the Government of Ukraine on the https://data.gov.ua/ website.
 
 At this moment govpack package provides a easy download of few medical datasets from the mentioned web-site, as well as auto creation of pandas variables from the sets.
 
 ###
 Prerequisites:
+
 Python >= 3.6, pandas, xlrd
 
 ####
 Installation:
+
 pip install -i https://test.pypi.org/simple/ govpack-yarusx
 
 #####
-Usage
+Usage:
+
+```python
+
+def create_pandas(link=str(), from_api=True, header=int(), force_download=False)
+
+```
+
 Main module of the package create_var has a function called **def create_pandas()**. This function takes such arguments:
   * link=str() # While from_api=True (set True by default), you need to pass as an input string, that contains a link on a dataset API from data.gov.ua dataset. In case of setting from_api into False, you should pass here a direct link on a dataset file (csv or excel format) from data.gov.ua.
 
@@ -22,12 +33,6 @@ Main module of the package create_var has a function called **def create_pandas(
   * header=int() # You don't need to pass anything here, except the case you need to debug table structure (see use cases). Here could be passed an inter that will define the row of header in pandas.read_excel.
 
   * force_download=False # If True (set False by default) create_pandas() method will try to download all dataset files (from data.gov.ua) that were used to create pandas variables
-
-```python
-
-def create_pandas(link=str(), from_api=True, header=int(), force_download=False)
-
-```
 
 After installing govpack-yarusx (test version) and opening python in your terminal:
 
