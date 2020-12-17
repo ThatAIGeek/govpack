@@ -50,6 +50,8 @@ You could also follow a use case described above from this picture:
 
 ![Use case](https://drive.google.com/uc?export=view&id=1wVmBgAs6kFkMtOqppFgM_a4bIuD8ReYP)
 
-Or you could check one of the use cases in this Colab notebook:
+Or you could check one of the use cases in these Colab notebooks:
 
-https://colab.research.google.com/drive/1GxJarOwAsfxSNVa71BCjBKFVHbax_JWq
+  * Opening from API + a bit of visualisation: https://colab.research.google.com/drive/1GxJarOwAsfxSNVa71BCjBKFVHbax_JWq
+
+  * Opening from direct link on file, a bit of debugging and analysis: https://colab.research.google.com/drive/1GcSM2DHaQm9aabtiUen9BsjHd9Ytioi7?usp=sharing
