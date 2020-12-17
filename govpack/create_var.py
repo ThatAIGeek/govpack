@@ -6,7 +6,7 @@ import time
 import pandas as pd
 
 #Getting links from API
-def pandas(link, from_api=True, force_download=False):
+def create_pandas(link=str(), from_api=True, header=int(), force_download=False):
 
     #Creating a dict of dataset files links and extensions
     urls = dict()
@@ -67,8 +67,8 @@ def pandas(link, from_api=True, force_download=False):
 
         elif extension == 'excel':
             try:
-                globals()[output_name] = pd.read_excel(url)
-            except:
+                globals()[output_name] = pd.read_excel(url, header=header)
+            except ValueError as e:
                 urlretrieve(url, f_name)
                 print(err(e))
                 globals()[output_name] = output_name_e

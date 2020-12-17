@@ -13,29 +13,41 @@ Installation:
 pip install -i https://test.pypi.org/simple/ govpack-yarusx
 
 #####
-Usage example:
+Usage
+Main module of the package create_var has a function called **def create_pandas()**. This function takes such arguments:
+  * link=str() # While from_api=True (set True by default), you need to pass as an input string, that contains a link on a dataset API from data.gov.ua dataset. In case of setting from_api into False, you should pass here a direct link on a dataset file (csv or excel format) from data.gov.ua.
+
+  * from_api=True # If True (set True by default) you need to pass a link on a dataset API from data.gov.ua dataset into the link parameter. In other case you need to use direct link on dataset file (csv or excel format) from data.gov.ua\
+
+  * header=int() # You don't need to pass anything here, except the case you need to debug table structure (see use cases). Here could be passed an inter that will define the row of header in pandas.read_excel.
+
+  * force_download=False # If True (set False by default) create_pandas() method will try to download all dataset files (from data.gov.ua) that were used to create pandas variables
+
+```python
+
+def create_pandas(link=str(), from_api=True, header=int(), force_download=False)
+
+```
+
 After installing govpack-yarusx (test version) and opening python in your terminal:
 
 ```python
-from govpack import *
-modules = dir()
-print(modules)
-apis = get_apis.apis(med_apis.list)
-apis
-names = med_apis.names
-names
-pandas_var_dict1 = create_var.create_pandas(apis[0]) # this could take some time
-pandas_var_dict1['dataset_1'].head()
+import govpack
+var1 = govpack.create_pandas(govpack.med_api0)
+var1['dataset_1'].head()
 
 #You also could use a direct link from the data.gov.ua on a data file(in this case you will have only one key 'dataset_0'):
-pandas_var_dict2 = create_var.create_pandas('https://data.gov.ua/dataset/1703061d-e0c4-4393-8a29-fc154d2705fe/resource/506977cc-1793-41ee-b14e-6d2bab7c02f4/download/pasport-naboru-danikh.xlsx', from_api = False, force_download = False)
-pandas_var_dict2['dataset_0'].head()
+
+link = 'https://data.gov.ua/dataset/1703061d-e0c4-4393-8a29-fc154d2705fe/resource/506977cc-1793-41ee-b14e-6d2bab7c02f4/download/pasport-naboru-danikh.xlsx'
+var2 = govpack.create_pandas(link=link, from_api = False)
+var2['dataset_0'].head()
+
 ```
 
-You could also follow a use case described above from this picture ('get_data' module name has been replaced by 'create_var', and 'create_pandas' method name simplified to 'pandas'):
+You could also follow a use case described above from this picture:
 
-![Use case](https://drive.google.com/uc?export=view&id=1bMJjPz2CqpVOwnZcdbP7X6YSUtAWiTiZ)
+![Use case](https://drive.google.com/uc?export=view&id=1wVmBgAs6kFkMtOqppFgM_a4bIuD8ReYP)
 
-Or you could check one of the use cases in this Colab notebook here:
+Or you could check one of the use cases in this Colab notebook:
 
 https://colab.research.google.com/drive/1GxJarOwAsfxSNVa71BCjBKFVHbax_JWq
