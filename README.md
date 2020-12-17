@@ -6,18 +6,15 @@ This package was created to ease and speed up access to the public data publishe
 
 At this moment govpack package provides a easy download of few medical datasets from the mentioned web-site, as well as auto creation of pandas variables from the sets.
 
-###
-Prerequisites:
+#### Prerequisites:
 
 Python >= 3.6, pandas, xlrd
 
-####
-Installation:
+#### Installation:
 
 pip install -i https://test.pypi.org/simple/ govpack-yarusx
 
-#####
-Usage:
+#### Usage:
 
 ```python
 
