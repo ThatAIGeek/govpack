@@ -25,7 +25,9 @@ def create_pandas(link=str(), from_api=True, header=int(), force_download=False)
 Main module of the package create_var has a function called **def create_pandas()**. This function takes such arguments:
   * link=str() # While from_api=True (set True by default), you need to pass as an input string, that contains a link on a dataset API from data.gov.ua dataset. In case of setting from_api into False, you should pass here a direct link on a dataset file (csv or excel format) from data.gov.ua.
 
-  * from_api=True # If True (set True by default) you need to pass a link on a dataset API from data.gov.ua dataset into the link parameter. In other case you need to use direct link on dataset file (csv or excel format) from data.gov.ua\
+  * from_api=True # If True (set True by default) you need to pass a link on a dataset API from data.gov.ua dataset into the link parameter. In other case you need to use direct link on dataset file (csv or excel format) from data.gov.ua
+
+  * limit=int() # Limit the quantity of links from API that will be proceed by govpack script
 
   * header=int() # You don't need to pass anything here, except the case you need to debug table structure (see use cases). Here could be passed an inter that will define the row of header in pandas.read_excel.
 
@@ -55,3 +57,5 @@ Or you could check one of the use cases in these Colab notebooks:
   * Opening from API + a bit of visualisation: https://colab.research.google.com/drive/1GxJarOwAsfxSNVa71BCjBKFVHbax_JWq?usp=sharing
 
   * Opening from direct link on file, a bit of debugging and analysis: https://colab.research.google.com/drive/1GcSM2DHaQm9aabtiUen9BsjHd9Ytioi7?usp=sharing
+
+  * Opening from zip files, ranking, clustering: https://colab.research.google.com/drive/1FxIOxPBy04rBWR2zqRcSzmfiJrqFNiFU?usp=sharing
