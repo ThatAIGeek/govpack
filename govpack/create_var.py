@@ -1,4 +1,3 @@
-#Importing packages that are used by the script
 import json
 from urllib.request import urlopen, urlretrieve
 import re
@@ -37,12 +36,6 @@ def create_pandas(link=str(), from_api=True, limit=int(), header=int(), force_do
         data = json.loads(source)
         for item in data['result']['resources']:
             url = item['url']
-
-            #"url": "https://data.gov.ua/dataset/193cb9ba-e12e-4987-a9a9-d464e834593e/resource/7b345ccc-f1d7-42ea-b32c-b5e528793c79/download/reimbursement_released_prescriptions_2019.csv",
-            #"qa": {"updated": "2020-07-14T10:48:15.623335", "openness_score": 3, "archival_timestamp": "2020-07-06T14:16:59.611608",
-            #"format": "CSV", "openness_score_reason_args": "[[\"CSV\", 3]]",
-            #"created": "2019-11-21T01:54:26.863847" <<<<<<<<<< use to filter a year in a big collections
-
             extension = get_extentstion(url)
             urls.update({url : extension})
     else:
@@ -62,9 +55,6 @@ def create_pandas(link=str(), from_api=True, limit=int(), header=int(), force_do
         output_name_e = "Got an Error while creating pd dataset for " + str(f_name) + ". The file has been downloaded for a manual parsing."
 
         #Creating pandas datasets
-
-        ### REPLACE WITH FUNCTIONS/CLASSES LATER ###
-
         if extension == 'zip':
             r = urlopen(url)
             with zipfile.ZipFile(BytesIO(r.read())) as z:
@@ -79,7 +69,6 @@ def create_pandas(link=str(), from_api=True, limit=int(), header=int(), force_do
                             except ValueError as e:
                                 urlretrieve(url, f_name)
                                 print("Can't create pd dataset for: \"" + f_name + "\", because of the Error: \n\"" + str(e).rstrip() + "\"\nThe file has been downloaded for a manual parsing.")
-                                # globals()[output_name] = output_name_e
                                 print('csv4')
                     elif ext == 'excel':
                         try:
@@ -88,11 +77,9 @@ def create_pandas(link=str(), from_api=True, limit=int(), header=int(), force_do
                         except ValueError as e:
                             urlretrieve(url, f_name)
                             print("Can't create pd dataset for: \"" + f_name + "\", because of the Error: \n\"" + str(e).rstrip() + "\"\nThe file has been downloaded for a manual parsing.")
-                            # globals()[output_name] = output_name_e
                             print('excel2')
                     else:
                         urlretrieve(url, f_name)
-                        # globals()[output_name] = output_name_e
                         print('else1')
 
         elif extension == 'csv':

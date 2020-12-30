@@ -1,4 +1,4 @@
-# govpack
+# **govpack**
 
 ## Ukrainian open data pack
 
@@ -6,11 +6,9 @@ This package was created to ease and speed up access to the public data publishe
 
 At this moment govpack package provides a easy download of few medical datasets from the mentioned web-site, as well as auto creation of pandas variables from the sets.
 
-#### Prerequisites:
-
-Python >= 3.6, pandas, xlrd
-
 #### Installation:
+
+**govpack** requirements are in requirements.txt file. Please note that xlrd version for a stable excel files parsing should be 1.2.0.
 
 pip install -i https://test.pypi.org/simple/ govpack-yarusx
 
@@ -18,7 +16,7 @@ pip install -i https://test.pypi.org/simple/ govpack-yarusx
 
 ```python
 
-def create_pandas(link=str(), from_api=True, header=int(), force_download=False)
+def create_pandas(link=str(), from_api=True, limit=int(), header=int(), force_download=False)
 
 ```
 
@@ -33,26 +31,32 @@ Main module of the package create_var has a function called **def create_pandas(
 
   * force_download=False # If True (set False by default) create_pandas() method will try to download all dataset files (from data.gov.ua) that were used to create pandas variables
 
-After installing govpack-yarusx (test version) and opening python in your terminal:
+Here is an explanation from a data.gov.ua how to get link of the dataset you need and combine it with API 'https://data.gov.ua/api/3/action/package_show?id=':
+  * https://data.gov.ua/pages/aboutuser2?fbclid=IwAR2P3KN8P8JhZu8GUhHQZ4rh5-DlhSwp375kPFrbkwxprEvHm0mwhr2wQ1M
+
+Also you could find several interesting dataset links beyond:
+  * Інформація про погашені електронні рецепти за програмою реімбурсації лікарських засобів («Доступні ліки»): '5334586c-5bd1-4e24-9c14-9ba826cc9fa1'
+  * Оплати надавачам медичної допомоги за програмою медичних гарантій: '25a46db9-2f15-4302-9b59-9bd761c80f46'
+  * Оплати аптечним закладам за договорами реімбурсації лікарських засобів («Доступні ліки») з НСЗУ: '959dca0a-9b74-41ff-a7c8-f8de6398a219'
+  * Відомості про транспортні засоби та їх власників: '06779371-308f-42d7-895e-5a39833375f0'
+
+After installing **govpack** and opening Python in your terminal you could use this code example:
 
 ```python
-import govpack
-var1 = govpack.create_pandas(govpack.med_api0)
-var1['dataset_1'].head()
+from govpack.create_var import create_pandas
+var1 = create_pandas('https://data.gov.ua/api/3/action/package_show?id=959dca0a-9b74-41ff-a7c8-f8de6398a219')
+var1['dataset_0'].head()
+```
 
-#You also could use a direct link from the data.gov.ua on a data file(in this case you will have only one key 'dataset_0'):
+You also could use a direct link from the data.gov.ua on a data file(in this case you will have only one key 'dataset_0'):
 
+```python
 link = 'https://data.gov.ua/dataset/1703061d-e0c4-4393-8a29-fc154d2705fe/resource/506977cc-1793-41ee-b14e-6d2bab7c02f4/download/pasport-naboru-danikh.xlsx'
 var2 = govpack.create_pandas(link=link, from_api = False)
 var2['dataset_0'].head()
-
 ```
 
-You could also follow a use case described above from this picture:
-
-![Use case](https://drive.google.com/uc?export=view&id=1wVmBgAs6kFkMtOqppFgM_a4bIuD8ReYP)
-
-Or you could check one of the use cases in these Colab notebooks:
+Below are several use cases that you could follow with Colab notebooks:
 
   * Opening from API + a bit of visualisation: https://colab.research.google.com/drive/1GxJarOwAsfxSNVa71BCjBKFVHbax_JWq?usp=sharing
 
