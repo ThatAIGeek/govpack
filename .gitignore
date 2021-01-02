@@ -1,0 +1,10 @@
+govpack_yarusx.egg-info/
+.DS_Store
+script.py
+build/
+dist/
+get_data_copy.py
+get_data.py
+get_apis_copy.py
+__pycache__/
+govpack/__pycache__/
