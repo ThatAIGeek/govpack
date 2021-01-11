@@ -8,9 +8,7 @@ At this moment govpack package provides a easy download of few medical datasets 
 
 #### Installation:
 
-**govpack** requirements are in requirements.txt file. Please note that xlrd version for a stable excel files parsing should be 1.2.0.
-
-pip install -i https://test.pypi.org/simple/ govpack-yarusx
+pip install govpack
 
 #### Usage:
 
