@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setuptools.setup(
     name="govpack",
-    version="0.1.0",
+    version="0.1.1",
     author="Yaroslav Khoruzhenko, Andrii Boiichuk",
     author_email="yarusx@gmail.com",
     description="A package that helps to create pandas variables from a public datasets: https://data.gov.ua/ ",
@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.6',
     install_requires=['pandas', 'xlrd==1.2.0'],
 )
