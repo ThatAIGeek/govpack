@@ -19,7 +19,7 @@ def create_pandas(link=str(), from_api=True, limit=int(), header=int(), force_do
 ```
 
 Main module of the package create_var has a function called **def create_pandas()**. This function takes such arguments:
-  * link=str() # While from_api=True (set True by default), you need to pass as an input string, that contains a link on a dataset API from data.gov.ua dataset. In case of setting from_api into False, you should pass here a direct link on a dataset file (csv or excel format) from data.gov.ua.
+  * link=str() # While from_api=True (set True by default), you need to pass as an input string, that contains a link on a dataset API from data.gov.ua dataset. In case of setting from_api into False, you should pass here a direct link on a dataset file (csv or excel format) from data.gov.ua. [Here](https://data.gov.ua/pages/aboutuser2?fbclid=IwAR2P3KN8P8JhZu8GUhHQZ4rh5-DlhSwp375kPFrbkwxprEvHm0mwhr2wQ1M) is an explanation from a data.gov.ua how to get link of the dataset you need and combine it with API 'https://data.gov.ua/api/3/action/package_show?id=':
 
   * from_api=True # If True (set True by default) you need to pass a link on a dataset API from data.gov.ua dataset into the link parameter. In other case you need to use direct link on dataset file (csv or excel format) from data.gov.ua
 
@@ -28,9 +28,6 @@ Main module of the package create_var has a function called **def create_pandas(
   * header=int() # You don't need to pass anything here, except the case you need to debug table structure (see use cases). Here could be passed an inter that will define the row of header in pandas.read_excel.
 
   * force_download=False # If True (set False by default) create_pandas() method will try to download all dataset files (from data.gov.ua) that were used to create pandas variables
-
-Here is an explanation from a data.gov.ua how to get link of the dataset you need and combine it with API 'https://data.gov.ua/api/3/action/package_show?id=':
-  * https://data.gov.ua/pages/aboutuser2?fbclid=IwAR2P3KN8P8JhZu8GUhHQZ4rh5-DlhSwp375kPFrbkwxprEvHm0mwhr2wQ1M
 
 Also you could find several interesting dataset links beyond:
   * Інформація про погашені електронні рецепти за програмою реімбурсації лікарських засобів («Доступні ліки»): '5334586c-5bd1-4e24-9c14-9ba826cc9fa1'
