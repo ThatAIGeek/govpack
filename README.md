@@ -55,9 +55,10 @@ var2['dataset_0'].head()
 ```
 
 Below are several use cases that you could follow with Colab notebooks:
+  * Applying multi-class classification(tensorflow): https://colab.research.google.com/drive/1RvzV8PvmBoq05Ca1U8JyCFudFF5I-Htd?usp=sharing
+
+  * Opening from zip files (with limiting), ranking: https://colab.research.google.com/drive/1FxIOxPBy04rBWR2zqRcSzmfiJrqFNiFU?usp=sharing
 
   * Opening from API + a bit of visualisation: https://colab.research.google.com/drive/1GxJarOwAsfxSNVa71BCjBKFVHbax_JWq?usp=sharing
 
   * Opening from direct link on file, a bit of debugging and analysis: https://colab.research.google.com/drive/1GcSM2DHaQm9aabtiUen9BsjHd9Ytioi7?usp=sharing
-
-  * Opening from zip files, ranking, clustering: https://colab.research.google.com/drive/1FxIOxPBy04rBWR2zqRcSzmfiJrqFNiFU?usp=sharing
