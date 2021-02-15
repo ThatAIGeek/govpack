@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf8") as fh:
 
 setuptools.setup(
     name="govpack",
-    version="0.1.2",
+    version="0.1.1",
     author="Yaroslav Khoruzhenko, Andrii Boiichuk",
     author_email="yarusx@gmail.com",
     description="A package that helps to create pandas variables from a public datasets: https://data.gov.ua/ ",
